@@ -49,6 +49,80 @@ h1 {
   font-weight: bold;
 }
 
+.category-chart {
+  border: 1px solid #ddd;
+  padding: 16px;
+  margin-bottom: 24px;
+  background: #fff;
+}
+
+.category-chart h2 {
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.category-chart-empty {
+  color: #888;
+  font-size: 14px;
+}
+
+.category-legend {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.category-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 0;
+  font-size: 13px;
+}
+
+.category-legend-key {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.category-legend-label {
+  color: #52514e;
+}
+
+.category-legend-value {
+  margin-left: auto;
+  padding-left: 16px;
+  font-weight: bold;
+  color: #0b0b0b;
+}
+
+.category-tooltip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 6px 10px;
+  font-size: 13px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.category-tooltip-key {
+  width: 10px;
+  border-top: 2px solid;
+}
+
+.category-tooltip-value {
+  font-weight: bold;
+  color: #0b0b0b;
+}
+
+.category-tooltip-label {
+  color: #666;
+}
+
 .add-transaction {
   border: 1px solid #ddd;
   padding: 16px;

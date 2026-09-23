@@ -16,7 +16,7 @@ function TransactionForm({ categories, onAddTransaction }) {
       amount,
       type,
       category,
-      date: new Date().toISOString().split('T')[0],
+      date: new Date().toISOString().split('T')[0]date: new Date().toISOString().split('T')[0],
     });
 
     setDescription("");
