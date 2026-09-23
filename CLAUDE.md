@@ -20,8 +20,11 @@ No test runner is configured.
 
 ## Architecture
 
-Standard Vite + React (no router, no state management library, no backend). The entire app lives in one component:
+Standard Vite + React (no router, no state management library, no backend). No data persistence — transactions reset on reload, seeded from a hardcoded array in `App.jsx`.
 
-- `src/App.jsx` — all state (transactions array, form fields, filters) and all logic (totals, filtering, add-transaction handler) live in this single component via `useState`. There is no data persistence — transactions reset on reload, seeded from a hardcoded array at the top of the component.
+- `src/App.jsx` — owns the `transactions` array (the only piece of state lifted above the leaf components) and passes it down along with `handleAddTransaction`/`handleDeleteTransaction`.
+- `src/Summary.jsx` — derives income/expense/balance totals from `transactions` via `.filter`/`.reduce`. Purely presentational, no local state.
+- `src/TransactionForm.jsx` — owns its own form-field state (`description`, `amount`, `type`, `category`) and calls `onAddTransaction` on submit.
+- `src/TransactionList.jsx` — owns its own filter state (`filterType`, `filterCategory`) and renders the filtered table, calling `onDeleteTransaction` per row.
 - `src/main.jsx` — standard React root mount, wraps `<App />` in `StrictMode`.
 - Styling is plain CSS (`src/App.css`, `src/index.css`), no CSS framework.
